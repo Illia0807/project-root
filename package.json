@@ -1,0 +1,28 @@
+{
+  "name": "project-root",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "",
+  "scripts": {
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
+    "axios": "^1.9.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.5.3"
+  }
+}
