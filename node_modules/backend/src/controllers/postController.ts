@@ -12,9 +12,9 @@ export const createNewPost = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const userId = req.user?.userId; // 🔧 заменено
-  console.log(req.user?.userId);
-  
+  const userId = Number(req.user?.userId); // Преобразуем userId в number
+  console.log(userId);
+
   const { title, content } = req.body;
 
   if (!userId || !title || !content) {
@@ -38,11 +38,11 @@ export const fetchUserPosts = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const userId = req.user?.id; // 🔧 заменено
+  const userId = Number(req.user?.userId); // Преобразуем userId в number
   if (!userId) {
-        res.status(401).json({ message: "Неавторизованный пользователь" });
-        return;
-      }
+    res.status(401).json({ message: "Неавторизованный пользователь" });
+    return;
+  }
   const posts = await getPostsByUser(userId);
   res.json(posts);
 };

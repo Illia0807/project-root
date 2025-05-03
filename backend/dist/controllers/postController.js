@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchPostById = exports.fetchUserPosts = exports.fetchAllPosts = exports.createNewPost = void 0;
 const postModel_1 = require("../models/postModel");
 const createNewPost = async (req, res) => {
-    const userId = req.user?.userId; // 🔧 заменено
-    console.log(req.user?.userId);
+    const userId = Number(req.user?.userId); // Преобразуем userId в number
+    console.log(userId);
     const { title, content } = req.body;
     if (!userId || !title || !content) {
         res.status(400).json({ message: "Все поля обязательны" });
@@ -20,7 +20,7 @@ const fetchAllPosts = async (_req, res) => {
 };
 exports.fetchAllPosts = fetchAllPosts;
 const fetchUserPosts = async (req, res) => {
-    const userId = req.user?.id; // 🔧 заменено
+    const userId = Number(req.user?.userId); // Преобразуем userId в number
     if (!userId) {
         res.status(401).json({ message: "Неавторизованный пользователь" });
         return;

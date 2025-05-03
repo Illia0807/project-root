@@ -1,11 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 
 // Типы данных для авторизации
-interface JwtPayload {
-  id: number;
-  
-}
+
 
 export const authMiddleware = (
   req: Request,
