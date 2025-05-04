@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const userRoutes_1 = __importDefault(require("../src/routes/userRoutes"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 // './routes/userRoutes'; // Импортируем маршруты пользователей
-const postRoutes_1 = __importDefault(require("../src/routes/postRoutes"));
+const postRoutes_1 = __importDefault(require("./routes/postRoutes"));
 // "../src/routes/postRoutes";
-const db_1 = require("../src/db/db"); // Импортируем Pool из pg
+const db_1 = require("./db/db"); // Импортируем Pool из pg
 // Загружаем переменные окружения
 dotenv_1.default.config();
 db_1.pool

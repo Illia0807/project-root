@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import userRoutes from "../src/routes/userRoutes";
+import userRoutes from './routes/userRoutes';
 // './routes/userRoutes'; // Импортируем маршруты пользователей
-import postRoutes from '../src/routes/postRoutes'
+import postRoutes from './routes/postRoutes'
 // "../src/routes/postRoutes";
 
-import { pool } from "../src/db/db"; // Импортируем Pool из pg
+import { pool } from "./db/db"; // Импортируем Pool из pg
 
 // Загружаем переменные окружения
 dotenv.config();
